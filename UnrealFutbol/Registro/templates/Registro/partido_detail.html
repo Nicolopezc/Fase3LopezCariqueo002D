@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Partido: {{ partido.local}} vs. {{ partido.visita}}</h1>
+
+  <p><strong>Local:</strong> {{ partido.local }}</p>
+  <p><strong>Visita:</strong> {{ partido.visita }}</p>
+  <p><strong>Fecha:</strong> {{ partido.fecha_partido }}</p> 
+  <p><strong>Estadio:</strong> {{ partido.estadio }}</p>  
+  <p><strong>Competicion:</strong> {{ partido.competicion }}</p>
+
+  <div class="row">
+    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+      <a href="{% url 'partido_update' partido.pk %}" target="_self" class="btn btn-primary btn-md">Editar</a>
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+      <a href="{% url 'partido_delete' partido.pk %}" target="_self" class="btn btn-primary btn-md">Eliminar</a>
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+      <a href="{% url 'partidos' %}" target="_self" class="btn btn-primary btn-md">Atrás</a>
+    </div>
+  </div>
+{% endblock %}

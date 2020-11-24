@@ -1,0 +1,13 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<h1>Unreal Futbol </h1>
+
+  <p>Welcome to <em>Unreal Futbol</em>, Django website </p>
+<h2>Login</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary btn-md">Login</button> <a href="{% url 'password_reset' %}" target="_self" class="btn btn-primary btn-md">Recuperar contraseña</a> <a href="{% url 'index' %}" target="_self" class="btn btn-primary btn-md">Atrás</a>
+</form>
+{% endblock %}

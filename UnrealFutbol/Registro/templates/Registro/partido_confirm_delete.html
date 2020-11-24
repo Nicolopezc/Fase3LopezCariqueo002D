@@ -1,0 +1,11 @@
+{%extends "base_generic.html" %}
+
+{% block content %}
+<h1> Eliminar partido </h1>
+<p>Estas seguro de elimnar el partido: {{ partido.local}} vs. {{ partido.visita}} ?</p>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="submit" action="" value="Eliminar" class="btn btn-primary btn-sm"> <a href="{% url 'partido-detail' partido.pk %}" target="_self" class="btn btn-primary btn-sm">Cancelar</a>
+</form>
+{% endblock %}

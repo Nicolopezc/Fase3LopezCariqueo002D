@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Lista de partidos</h1>
+    <hr>
+    <a href="{% url 'partido_create' %}" target="_self" class="btn btn-primary btn-md">Crear partido</a> <a href="{% url 'index' %}" target="_self" class="btn btn-primary btn-md">Atrás</a>
+    <hr>
+    {% if partido_list %}
+    <ul>
+
+      {% for partido in partido_list %}
+      <li>
+        <a href="{{ partido.get_absolute_url }}">{{ partido.local }} vs. {{partido.visita}}</a> 
+      </li>
+      {% endfor %}
+
+    </ul>
+
+    {% else %}
+      <p>No existen partidos registrados.</p>
+    {% endif %}       
+{% endblock %}

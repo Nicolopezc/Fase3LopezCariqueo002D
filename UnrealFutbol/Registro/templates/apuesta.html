@@ -1,0 +1,126 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    {% load static %}
+    <script src="{% static 'js/metodos.js' %}"></script>
+</head>
+
+<body onload="startTime().Ganancia()">
+    <div class="jumbotron">
+        <h1>Unreal Futbol™ apuesta aquí facil, rapido y seguro</h1> 
+        <p>Elije el encuentro que querias, selecciona el equipo ganador e ingresa el monto de apuesta. Tan solo con esos sencillos pasos puedes ganar dinero sin trampas ni sorteos<br>
+        </p>
+        <p>Asegurate de confirmar tu apuesta y en caso de necesitar ayuda aprieta el boton de aqui abajo</p>
+        <input type="button" id="boton" name="informacion" value="Ayuda" onclick="Ayuda()">       
+      </div>
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="background-color:#ccc">
+          <h2 class="float-left">Bienvenido Usuario</h2>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="background-color: #ccc">
+          <div id="txt" class="float-right"></div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="col-12">
+        <h3> Ganancias: </h3> <div id ="acm"></div>
+      </div>
+
+      <hr>
+      <div class="col-12" style="background-color:#aaa">
+        <h2>Futbol - Campeonato nacional Plan Vital© </h2>
+      </div>
+
+      <hr>
+      <div class="row">
+        <div class="col-xl-1 col-lg-2 col-md-3 col-sm-4"  style="background-color:#ccc">
+          <img src="{% static 'images/logo.png' %}" width="60" height="60" alt="logo" class="float-left">
+        </div>
+        <div style="border-left: thick solid #000000"></div>
+        <div class="col-xl-5 col-lg-4 col-md-3 col-sm-2"  style="background-color:#ccc">
+          <h3> Colo Colo <br> Universidad de Chile
+          </h3> 
+        </div>
+        <div style="border-left: thick solid #000000"></div>
+        <div class="col-xl-5 col-lg-4 col-md-3 col-sm-2"  style="background-color:#ccc">
+            <ul class="menuhorizontal">
+                <li><input type="button" id="boton1" name="Ganador1" value="Colo Colo" onclick="Ganador()"></li>
+                <li><input type="button" id="boton2" name="Empate" value="Empate" onclick="Perdedor()"></li>
+                <li><input type="button" id="boton3" name="Ganador2" value="Universidad de Chile" onclick="Perdedor()"></li>
+            </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-xl-1 col-lg-2 col-md-3 col-sm-4"  style="background-color:#ccc">
+          <img src="{% static 'images/logo.png' %}" width="60" height="60" alt="logo" class="float-left">
+        </div>
+        <div style="border-left: thick solid #000000"></div>
+        <div class="col-xl-5 col-lg-4 col-md-3 col-sm-2"  style="background-color:#ccc">
+          <h3> Union española <br> Palestino
+          </h3> 
+        </div>
+        <div style="border-left: thick solid #000000"></div>
+        <div class="col-xl-5 col-lg-4 col-md-3 col-sm-2"  style="background-color:#ccc">
+          <ul class="menuhorizontal">
+            <li><input type="button" id="boton4" name="Ganador3" value="Union española" onclick="Perdedor()"></li>
+            <li><input type="button" id="boton5" name="Empate2" value="Empate" onclick="Perdedor()"></li>
+            <li><input type="button" id="boton6" name="Ganador4" value="Palestino" onclick="Ganador()"></li>
+        </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-xl-1 col-lg-2 col-md-3 col-sm-4"  style="background-color:#ccc">
+          <img src="{% static 'images/logo.png' %}" width="60" height="60" alt="logo" class="float-left">
+        </div>
+        <div style="border-left: thick solid #000000"></div>
+        <div class="col-xl-5 col-lg-4 col-md-3 col-sm-2"  style="background-color:#ccc">
+          <h3> Universidad Catolica <br> Cobreloa
+          </h3> 
+        </div>
+        <div style="border-left: thick solid #000000"></div>
+        <div class="col-xl-5 col-lg-4 col-md-3 col-sm-2"  style="background-color:#ccc">
+          <ul class="menuhorizontal">
+            <li><input type="button" id="boton7" name="Ganador5" value="Universidad Catolica" onclick="Ganador()"></li>
+            <li><input type="button" id="boton8" name="Empate3" value="Empate" onclick="Perdedor()"></li>
+            <li><input type="button" id="boton9" name="Ganador6" value="Cobreloa" onclick="Perdedor()"></li>
+        </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-xl-1 col-lg-2 col-md-3 col-sm-4"  style="background-color:#ccc">
+          <img src="{% static 'images/logo.png' %}" width="60" height="60" alt="logo" class="float-left">
+        </div>
+        <div style="border-left: thick solid #000000"></div>
+        <div class="col-xl-5 col-lg-4 col-md-3 col-sm-2"  style="background-color:#ccc">
+          <h3> CD Temuco <br> CD La Serena
+          </h3> 
+        </div>
+        <div style="border-left: thick solid #000000"></div>
+        <div class="col-xl-5 col-lg-4 col-md-3 col-sm-2"  style="background-color:#ccc">
+          <ul class="menuhorizontal">
+            <li><input type="button" id="boton10" name="Ganador7" value="CD Temuco" onclick="Perdedor()"></li>
+            <li><input type="button" id="boton11" name="Empate4" value="Empate" onclick="Ganador()"></li>
+            <li><input type="button" id="boton12" name="Ganador8" value="CD La Serena" onclick="Perdedor()"></li>
+        </ul>
+        </div>
+      </div>
+
+</body>
+</html>
+
+{% endblock %}

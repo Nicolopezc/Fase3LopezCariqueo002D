@@ -1,0 +1,83 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+      <title>Unreal Futbol | Registro</title>
+      <meta charset="utf-8">
+      
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="css/estilos.css">
+
+      
+      
+    </head>
+    <body>
+        
+        <div class="jumbotron">
+            <h2> Registrate Rapido y Facil </h2>
+            <h5 class="text-danger">*Todos los campos son Obligatorios</h5>
+           
+           
+             <form role="form" id="registro" action="{% url 'login' %}">
+               <div class="col-5">
+                   <label for="nombre">Ingrese nombre:</label>
+                   <input type="text" name="nombre" class="form-control" id="nombre"  placeholder="Estribe tu Nombre Aqui">
+                   <br>
+               </div>
+
+               <div class="col-5">
+                   <label for="apellido">Ingrese Apellido:</label>
+                   <input type="text" name="apellido" class="form-control" id="apellido"  placeholder="Estribe tu Apellido Aqui">
+                   <br>
+               </div>
+
+               <div class="col-5">
+                   <label for="email">Ingrese su Correo:</label>
+                   <input type="email" name="email" class="form-control" id="email"placeholder="tucorreoAqui@ejemplo.com">
+                   <br>
+               </div>
+               <br>
+               <div class="col-5">
+                   <label>Fecha Nacimiento:</label>
+                   <input type="date" name="fechaNacimiento" min="15-09-2020" >
+               </div>
+              
+
+               <div class="col-5">
+                   <label for="Telefono">Ingrese Telefono:</label>
+                   <input type="tel" name="telefono" class="form-control" maxlength="11"  id="Telefono"  placeholder="(569)tu numero de 8 digitos">
+                   <h6>Ante poner 569. *solo se aceptan numero registrados en chile* </h6>
+                  
+               </div>
+
+               <div class="col-5">
+                   <label for="password">Ingrese contraseña</label>
+                   <input type="password" name="password" class="form-control" id="password"  placeholder="Contraseña mayor o igual a 6 digitos">
+               </div>
+
+               <div class="col-5" >  
+                  <label for="password">Repita Contraseña</label>
+                  <input type="password" name="password2" class="form-control" id="password2" >
+               </div>
+
+               <p><br>Declaro que soy mayor de 18 años y Estoy de Acuerdo con <a href="{% url 'terminos' %}" target="_blank">Terminos y Condiciones</a></p>
+               <button class="btn-primary">Enviar</button>
+               <br>
+               <p><a href="{% url 'login' %}">Ya Tengo Cuenta</a></p>
+
+               
+
+
+
+             </form>
+
+         
+         </div>
+    </body>
+</html>
+{% endblock %}
