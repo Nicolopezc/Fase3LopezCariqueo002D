@@ -1,0 +1,36 @@
+Primero ejecutar python manage.py runserver dentro del repositorio del proyecto donde se encuentre el archivo manage
+por ejemplo: C:\Users\SAIDO\Desktop\Prueba_002\Django_002\Fase2CariqueoLopez002\UnrealFutbol
+
+CUENTA ADMIN:
+Usuario: al.cariqueo
+Contraseña: 123456abc
+
+PAGINA DE INICIO:
+http://127.0.0.1:8000/Registro/
+
+GALERIA:
+http://127.0.0.1:8000/Registro/galeria/
+
+REGISTRO:
+http://127.0.0.1:8000/Registro/registro/
+
+LOGIN:
+http://127.0.0.1:8000/Registro/login/
+
+APUESTA:
+http://127.0.0.1:8000/Registro/apuesta/
+
+TERMINOS:
+http://127.0.0.1:8000/Registro/terminos/
+
+CRUD:
+Crear http://127.0.0.1:8000/Registro/usuario/create/
+Detalle usuario http://127.0.0.1:8000/Registro/usuario/1
+Eliminar http://127.0.0.1:8000/Registro/usuario/1/update/
+Actualizar http://127.0.0.1:8000/Registro/usuario/1/delete/
+
+VISTA LISTA:
+http://127.0.0.1:8000/Registro/partidos/
+
+VISTA DETALLADA:
+http://127.0.0.1:8000/Registro/partidos/1
