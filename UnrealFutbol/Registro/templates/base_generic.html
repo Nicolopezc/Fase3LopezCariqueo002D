@@ -34,27 +34,29 @@
           </li>
           {% if user.is_authenticated  %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
+            <a class="nav-link" href="{% url 'apuesta' %}">Apostar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'apuesta' %}">Apostar</a>
+            <a class="nav-link" href="{% url 'partidos' %}">Partidos</a>
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
+            <a class="nav-link" href="{% url 'login' %}">Apostar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">Apostar</a>
+            <a class="nav-link" href="{% url 'login' %}">Partidos</a>
           </li>
           {% endif %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'galeria' %}">Galeria</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'partidos' %}">Partidos</a>
-          </li>
         </ul>
       </div>
+      {% if user.is_authenticated  %}
+      <a href="{% url 'logout' %}" target="_self" class="btn btn-primary btn-md float-right">Cerrar sesión</a>
+      {% else %}
+      <a href="{% url 'login' %}" target="_self" class="btn btn-primary btn-md float-right">Iniciar Sesion</a>
+      {% endif %}
     </nav>
     {% block content %}{% endblock %}
     <hr>

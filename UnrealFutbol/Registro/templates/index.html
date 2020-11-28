@@ -20,7 +20,11 @@
         <p>Aqui en unreal Futbol puedes vivir el futbol como nunca antes, haciendo apuestas sobre resultados de tus equipos favoritos y ganando dinero todo lo que un futbolero como tu necesita.<br>
         </p>
         <p>Solo necesitas ser mayor de 18 años y tener una tarjeta de credito valida. Únete en el boton de aqui abajo.</p>
-        <a href="{% url 'registro' %}" target="_self" class="btn btn-primary btn-lg">Registrarse</a>       
+        {% if user.is_authenticated %}
+        <h3>Bienvenido: {{ user.username }}</h3>
+        {% else %}
+        <a href="{% url 'registro' %}" target="_self" class="btn btn-primary btn-lg">Registrarse</a>
+        {% endif %}       
       </div>
 
       <div id="carousel1" class="carousel slide" data-ride="carousel">

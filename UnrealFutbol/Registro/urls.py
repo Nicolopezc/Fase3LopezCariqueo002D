@@ -8,9 +8,9 @@ urlpatterns = [
     path('terminos/',views.terminos,name='terminos'),
     path('galeria/', views.galeria, name='galeria'),
     path('apuesta/', views.apuesta, name='apuesta'),
-    path('usuario/<int:pk>', views.UsuarioDetailView.as_view(), name='usuario-detail'),
     path('partidos/',views.PartidoListView.as_view(), name='partidos'),
     path('partidos/<int:pk>', views.PartidoDetailView.as_view(), name='partido-detail'),
+    path('usuario/<int:pk>', views.UsuarioDetailView.as_view(), name='usuario-detail'),
 ]
 
 urlpatterns+=[
@@ -20,5 +20,4 @@ urlpatterns+=[
     path('partido/create/', views.PartidoCreate.as_view(), name='partido_create'),
     path('partido/<int:pk>/update/', views.PartidoUpdate.as_view(), name='partido_update'),
     path('partido/<int:pk>/delete/', views.PartidoDelete.as_view(), name='partido_delete'),
-
 ]

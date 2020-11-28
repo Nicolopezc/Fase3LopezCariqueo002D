@@ -25,7 +25,12 @@
       </div>
       <div class="row">
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="background-color:#ccc">
-          <h2 class="float-left">Bienvenido Usuario</h2>
+          <h2 class="float-left">
+            {% if user.is_authenticated %}
+            <h3>Bienvenido: {{ user.username }}</h3>
+            {% else %}
+            {% endif %}
+          </h2>
         </div>
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="background-color: #ccc">
           <div id="txt" class="float-right"></div>

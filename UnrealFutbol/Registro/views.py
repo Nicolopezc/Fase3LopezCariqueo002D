@@ -63,7 +63,7 @@ class UsuarioListView(generic.ListView):
     model = Usuario
 
 class UsuarioDetailView(generic.DetailView):
-    model=Usuario
+    model = Usuario
 
 class PartidoCreate(CreateView):
     model = Partido
