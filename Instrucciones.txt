@@ -5,8 +5,18 @@ CUENTA ADMIN:
 Usuario: al.cariqueo
 Contraseña: 123456abc
 
+CUENTA APOSTADOR:
+Usuario: Ensidia
+Contraseña: 123321asd
+
 PAGINA DE INICIO:
 http://127.0.0.1:8000/Registro/
+
+LOGIN: 
+http://127.0.0.1:8000/accounts/login/
+
+RECUPERAR CONTRASEÑA:
+http://127.0.0.1:8000/accounts/password_reset/
 
 GALERIA:
 http://127.0.0.1:8000/Registro/galeria/
@@ -14,8 +24,8 @@ http://127.0.0.1:8000/Registro/galeria/
 REGISTRO:
 http://127.0.0.1:8000/Registro/registro/
 
-LOGIN:
-http://127.0.0.1:8000/Registro/login/
+PARTIDOS:
+http://127.0.0.1:8000/Registro/partidos/
 
 APUESTA:
 http://127.0.0.1:8000/Registro/apuesta/
@@ -23,11 +33,20 @@ http://127.0.0.1:8000/Registro/apuesta/
 TERMINOS:
 http://127.0.0.1:8000/Registro/terminos/
 
-CRUD:
+API:
+http://127.0.0.1:8000/users/
+
+CRUD USUARIO:
 Crear http://127.0.0.1:8000/Registro/usuario/create/
 Detalle usuario http://127.0.0.1:8000/Registro/usuario/1
 Eliminar http://127.0.0.1:8000/Registro/usuario/1/update/
 Actualizar http://127.0.0.1:8000/Registro/usuario/1/delete/
+
+CRUD PARTIDO:
+Crear http://127.0.0.1:8000/Registro/partido/create/
+Detalle http://127.0.0.1:8000/Registro/partidos/3
+Eliminar http://127.0.0.1:8000/Registro/partido/3/delete/
+Actualizar http://127.0.0.1:8000/Registro/partido/3/update/
 
 VISTA LISTA:
 http://127.0.0.1:8000/Registro/partidos/
